@@ -19,6 +19,31 @@ import java.util.Map;
 public class DeviceServiceImpl extends ServiceBase implements DeviceService {
 
     @Override
+    public Device get(Long id) {
+        WebApiResult<Device> result = null;
+        try {
+            Map<String, String> paramMap = new HashMap<String, String>();
+            paramMap.put("id", String.valueOf(id));
+
+            String ret = WebApiRequest.get("device/get", paramMap);
+
+            Type type = new TypeToken<WebApiResult<Device>>() {
+            }.getType();
+            result = JsonUtils.fromJson(ret, type);
+            // 成功
+            if (result.getCode() == ResultCode.STATUS_OK) {
+                return result.getData();
+            }
+        } catch (Exception ex) {
+            logger.error(ex);
+            result = new WebApiResult<Device>();
+            result.setCode(ResultCode.SERVER_ERROR);
+            result.setMsg(ex.toString());
+        }
+        return null;
+    }
+
+    @Override
     public Long add(Device device) {
 
         WebApiResult<Long> result = null;

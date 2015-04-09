@@ -8,6 +8,12 @@ import java.util.List;
 @Service
 public interface DeviceService {
     /**
+     * 通过id得到设备信息
+     * @param id
+     * @return
+     */
+    Device get(Long id);
+    /**
      * 添加设备
      *
      * @param device

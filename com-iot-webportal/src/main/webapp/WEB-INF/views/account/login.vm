@@ -1,6 +1,5 @@
 #set($layout = "layout/layout.vm")
 #set($header = "<link href='/static/css/reg.css' rel='stylesheet'>")
-
 <form class="form-signin" method="post" role="form">
     <h2 class="form-signin-heading">登录</h2>
     <input type="text" class="form-control" name="uname" placeholder="请输入用户名" required autofocus>
