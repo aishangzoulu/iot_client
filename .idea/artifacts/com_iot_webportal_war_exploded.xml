@@ -76,7 +76,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="D:\Workspaces\idea\iot-webportal\com-iot-webportal\target/MANIFEST.MF" />
+        <element id="file-copy" path="D:\Workspaces\github\iot_client\com-iot-webportal\target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="com-iot-webportal/web/Web" />
     </root>
